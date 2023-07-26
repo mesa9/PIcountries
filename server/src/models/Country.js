@@ -8,5 +8,39 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  });
+    id: {
+      type: DataTypes.STRING(3),
+      primaryKey: true,
+      defaultvalue: DataTypes.STRING(3),
+    },
+    flag: {
+      type: DataTypes.STRING,
+      isUrl: true,
+
+    },
+    continent: {
+      type: DataTypes.STRING(10),
+    },
+    capital: {
+      type: DataTypes.STRING(50),
+    },
+    area: {
+      type: DataTypes.STRING,
+      isNumeric: true,
+      isDecimal: true,
+    },
+    subregion: {
+      type: DataTypes.STRING(60),
+      isAlpha: true,
+    },
+    population: {
+      type: DataTypes.INTEGER,
+    },
+  },
+  {
+    timestamps: false,
+    freezeTableName: true,
+  }
+  );
 };
+
